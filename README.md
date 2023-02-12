@@ -6,6 +6,30 @@ The POC is working. This processes the 2 files in the S3 path in main.py using m
 
     PYTHONPATH=. python projects/project1/main.py
 
+## The Abstractions
+
+
+```mermaid
+sequenceDiagram
+    participant MainProcess
+    participant DocReader (connector)
+    participant DocProcessor
+    participant StructuredDocWriter (conncector)
+    Note over MainProcess: 
+    MainProcess->>DocReader (connector): Initialize / Authorize
+    DocReader (connector)->>MainProcess: All doc metadata (no file content)
+    loop Single doc at a time (allows for multiprocessing)
+    MainProcess->>DocProcessor: Raw Document Input (Text string or File Objext)
+    DocProcessor->>DocReader (connector): Fetch document
+    Note over DocProcessor: Process througt Unstructured
+    DocProcessor->>StructuredDocWriter (conncector): Write Structured Data
+    Note over StructuredDocWriter (conncector): <br /> Optionally store version info, filename, etc
+    DocProcessor->>MainProcess: Structured Data (only JSON in V0)
+    end
+    Note over MainProcess: Process structured data from all docs
+```
+
+
 ## Immediate TODOs
 
 1. Getting dependencies installed is not seamless.
