@@ -1,6 +1,6 @@
 # Ingest batches of documents through the Unstructured library
 
-This works: processes s3 files in a math in 2 processes and writes results to the filesystem.
+The POC is working. This processes the 2 files in the S3 path in main.py using multiprocessing (just 2 processes for now) and writes structured results to the filesystem under `/structured-output`
 
     PYTHONPATH=. python projects/project1/main.py
 
