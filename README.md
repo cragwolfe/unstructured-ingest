@@ -19,7 +19,7 @@ sequenceDiagram
     MainProcess->>DocReader (connector): Initialize / Authorize
     DocReader (connector)->>MainProcess: All doc metadata (no file content)
     loop Single doc at a time (allows for multiprocessing)
-    MainProcess->>DocProcessor: Raw Document Input (Text string or File Objext)
+    MainProcess->>DocProcessor: Raw document metadata (no file content)
     DocProcessor->>DocReader (connector): Fetch document
     Note over DocProcessor: Process througt Unstructured
     DocProcessor->>StructuredDocWriter (conncector): Write Structured Data
