@@ -15,7 +15,6 @@ sequenceDiagram
     participant DocReader (connector)
     participant DocProcessor
     participant StructuredDocWriter (conncector)
-    Note over MainProcess: 
     MainProcess->>DocReader (connector): Initialize / Authorize
     DocReader (connector)->>MainProcess: All doc metadata (no file content)
     loop Single doc at a time (allows for multiprocessing)
@@ -26,7 +25,7 @@ sequenceDiagram
     Note over StructuredDocWriter (conncector): <br /> Optionally store version info, filename, etc
     DocProcessor->>MainProcess: Structured Data (only JSON in V0)
     end
-    Note over MainProcess: Process structured data from all docs
+    Note over MainProcess: Optionally process structured data from all docs (single doc data is already written)
 ```
 
 
