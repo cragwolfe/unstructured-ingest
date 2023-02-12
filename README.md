@@ -25,7 +25,7 @@ sequenceDiagram
     Note over StructuredDocWriter (conncector): <br /> Optionally store version info, filename, etc
     DocProcessor->>MainProcess: Structured Data (only JSON in V0)
     end
-    Note over MainProcess: Optionally process structured data from all docs (single doc data is already written)
+    Note over MainProcess: Optional - process structured data from all docs
 ```
 
 
