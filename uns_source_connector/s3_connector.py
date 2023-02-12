@@ -43,7 +43,7 @@ class SimpleS3Config:
 
 @dataclass
 class S3IngestDoc:
-    """Class encapsulating fetching a doc and writing processed results.
+    """Class encapsulating fetching a doc and writing processed results (but not doing the processing!).
 
     Also includes a cleanup method. When things go wrong and the cleanup
     method is not called, the file is left behind on the filesystem to assist debugging.
@@ -60,7 +60,6 @@ class S3IngestDoc:
     # the tmp_download_dir and local_output_dir paths to avoid creating
     # extra subdirs. Thouth, it should still be possible many subdirs
     # below the root prefix could be created.
-
 
     # NOTE(crag): probably doesn't matter,  but intentionally not defining tmp_download_file
     # __post_init__ for multiprocessing simplicity (no Path objects in initially

@@ -1,3 +1,5 @@
+# Work in Progress - This repo may disappear and move to unstructured
+
 # Ingest batches of documents through the Unstructured library
 
 The POC is working. This processes the 2 files in the S3 path in main.py using multiprocessing (just 2 processes for now) and writes structured results to the filesystem under `/structured-output`
@@ -8,11 +10,7 @@ The POC is working. This processes the 2 files in the S3 path in main.py using m
 
 1. Getting dependencies installed is not seamless.
 
-Needed to `make install-local-inference` from the Unstructured directory
-despite pip dependency on unstructured[local-inference], so I guess
-just copy the workarounds here.
-
-Actually need nicer message for users in the wild how to install detectron
+Need nicer message for users in the wild how to install detectron, similar to the one that exists in unstructured-inference for poppler.
 
 
 2. tests and lint
