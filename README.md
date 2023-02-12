@@ -2,7 +2,7 @@
 
 This works: processes s3 files in a math in 2 processes and writes results to the filesystem.
 
-    PYTHONPATH=. pylint projects/project1/main.py
+    PYTHONPATH=. python projects/project1/main.py
 
 ## Immediate TODOs
 
