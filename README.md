@@ -19,6 +19,7 @@ Actually need nicer message for users in the wild how to install detectron
 
 3. change this to a real README, obvs
 
+4. Move this to unstructured?
 
 ## Later TODO's
    fail before trying to do any work (like downloading s3 files)
